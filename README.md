@@ -10,5 +10,5 @@ Steps to Open From GitBash:
 	4. Copy path to your systems Unity.exe and paste in a value of newly created variable (replace / with \)
 	5. Click ok and close
 	6. Clone/pull down repository
-	7. Run command "Unity -projectPath <path to unity project>
+	7. Run command Unity -projectPath <path to unity project>
 	8. Edit the program
