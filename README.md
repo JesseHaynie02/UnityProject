@@ -4,7 +4,7 @@ Unity Resource Link: https://docs.unity3d.com/6000.0/Documentation/ScriptReferen
 
 Steps to Open From GitBash:
 
-	1. Open System environment variables in Windows
+	1. Open System environment variables in Window
 	2. Double click Path in the bottom window
 	3. Make new variable
 	4. Copy path to your systems Unity.exe and paste in a value of newly created variable (replace / with \)
