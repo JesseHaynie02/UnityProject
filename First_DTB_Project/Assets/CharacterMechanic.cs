@@ -15,19 +15,19 @@ public class CharacterMechanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow))
         {
             location.y += moveScale;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow))
         {
             location.y -= moveScale;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))
         {
             location.x += moveScale;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow))
         {
             location.x -= moveScale;
         }
