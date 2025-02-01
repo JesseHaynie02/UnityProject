@@ -3,7 +3,7 @@ using UnityEngine;
 public class CharacterMechanic : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
-    public const float moveScale = 0.0055f;
+    public const float moveSpeed = 4.0f;
     private Vector2 location;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,22 +15,29 @@ public class CharacterMechanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow))
+        // Since Update() runs every frame having a faster pc
+        // means characters move at a rate based on fps.
+        // Multiplying moveSpeed * Time.deltaTime makes the speed
+        // of the character agnostic of the # of frames.
+        float moveAmount = moveSpeed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            location.y += moveScale;
+            location.y += moveAmount;
         }
-        if (Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            location.y -= moveScale;
+            location.y -= moveAmount;
         }
-        if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            location.x += moveScale;
+            location.x += moveAmount;
         }
-        if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            location.x -= moveScale;
+            location.x -= moveAmount;
         }
+
         rigidBody.MovePosition(location);
     }
 }
